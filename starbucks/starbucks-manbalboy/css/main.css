@@ -23,8 +23,66 @@ img {
     position: relative;
 }
 
+.btn {
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .4s;
+}
 
-/* HEADER */
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn.btn--reverse{
+    background-color: #333;
+    color: #fff;
+}
+
+.btn.btn--reverse:hover{
+    background-color: transparent;
+    color: #333;
+}
+
+.btn.btn--brown{
+    color: #592B18;
+    border-color: #592B18;
+}
+
+.btn.btn--brown:hover{
+    color: #fff;
+    background-color:  #592B18;
+}
+
+.btn.btn--gold{
+    color: #D9AA8A;
+    border-color: #D9AA8A;
+}
+
+.btn.btn--gold:hover{
+    color: #fff;
+    background-color:  #D9AA8A;
+}
+
+.btn.btn--white{
+    color: #FFF;
+    border-color: #FFF;
+}
+
+.btn.btn--gold:hover{
+    color: #333;
+    background-color:  #FFF;
+}
+
+    /* HEADER */
 header {
     width: 100%;
     background-color: #f6f5f0;
@@ -33,6 +91,7 @@ header {
     /* fixed 와 absolute 는 width 값이 최소 값으로 줄어드려함 */
     position: fixed;
     top: 0;
+    z-index: 9;
 }
 
 header > .inner {
@@ -234,34 +293,48 @@ header .badges .badge {
 
 .visual .inner {
     height: 646px;
-    background-color: orange;
+    /*background-color: orange;*/
 }
 
 .visual .title {
-
+    position: absolute;
+    top: 88px;
+    left: -10px;
 }
 
 .visual .title .btn {
-
+    position: absolute;
+    top: 259px;
+    left: 173px;
 }
 
 .visual .cup1.image {
-
+    position: absolute;
+    bottom: 0;
+    right: -47px;
 }
 
 .visual .cup1.text {
-
+    position: absolute;
+    top: 38px;
+    right: 171px;
 }
 
 .visual .cup2.image {
-
+    position: absolute;
+    bottom: 0;
+    right: 162px;
 }
 
 .visual .cup2.text {
-
+    position: absolute;
+    top: 321px;
+    right: 416px;
 }
 
 .visual .spoon {
-
+    position: absolute;
+    bottom: 0;
+    left: 275px;
 }
 
