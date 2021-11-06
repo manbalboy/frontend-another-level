@@ -48,3 +48,23 @@ new Swiper('.notice-line .swiper-container', {
   autoplay: true,
   loop: true
 });
+
+new Swiper('.promotion .swiper-container', {
+  slidesPerView: 3, //한번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이여백
+  centeredSlides: true, // 1번슬라이드가 가운데
+  loop: true,
+  autoplay: {
+    delay: 5000
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination', // 페이지 요소
+    clickable: true
+  },
+  navigation : {
+    prevEl : '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next'
+  }
+
+
+});
