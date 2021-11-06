@@ -38,7 +38,13 @@ window.addEventListener('scroll', _.throttle(function () {
 const fadEls = document.querySelectorAll('.visual .fade-in');
 fadEls.forEach((item, idx) => {
   gsap.to(item, 1, {
-    delay: (idx+1) * .7,
+    delay: (idx + 1) * .7,
     opacity: 1
   })
 })
+
+new Swiper('.notice-line .swiper-container', {
+  direction: 'vertical',
+  autoplay: true,
+  loop: true
+});
