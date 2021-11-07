@@ -677,16 +677,13 @@ header .badges .badge {
     margin-bottom: 10px;
 }
 
-
 .season-product .text-group .description {
     margin-bottom: 15px;
 }
 
-
 .season-product .text-group .more {
 
 }
-
 
 /* RESERVE COFFEE */
 .reserve-coffee {
@@ -775,7 +772,6 @@ header .badges .badge {
     transition: 1s;
 }
 
-
 .reserve-store .medal .front {
     transform: rotateY(0deg);
 }
@@ -798,4 +794,55 @@ header .badges .badge {
     left: 0;
     right: 0;
     margin: auto;
+}
+
+/* FIND THE STORE */
+.find-store {
+    background-image: url("/images/find_store_bg.jpg");
+}
+
+.find-store .inner {
+    height: 400px;
+}
+
+.find-store .texture1 {
+    position: absolute;
+    top: 0;
+    left: 400px;
+}
+
+.find-store .texture2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.find-store .picture {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.5);
+}
+
+.find-store .picture1 {
+    top: -60px;
+    left: 0;
+}
+
+.find-store .picture2 {
+    top: 150px;
+    left: 250px;
+}
+
+.find-store .text-group {
+    position: absolute;
+    top: 120px;
+    left: 550px;
+}
+
+.find-store .text-group .title {
+    margin-bottom: 20px;
+}
+
+.find-store .text-group .description {
+    margin-bottom: 20px;
 }
