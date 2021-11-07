@@ -602,7 +602,7 @@ header .badges .badge {
 
 .youtube .youtube__area {
     width: 1920px;
-    background-color: orange;
+    /*background-color: orange;*/
     position: absolute;
     left: 50%;
     margin-left: calc(1920px / -2);
@@ -626,4 +626,12 @@ header .badges .badge {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+#player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
