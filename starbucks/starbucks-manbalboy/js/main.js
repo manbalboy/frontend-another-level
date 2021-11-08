@@ -25,6 +25,11 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 0,
       display: 'none'
     });
+
+    //버튼 보이기
+    gsap.to('#to-top', .2, {
+      x: 0
+    })
   } else {
     //배지 보이기
     // badgeEl.style.display = 'block';
@@ -32,8 +37,19 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 1,
       display: 'block'
     });
+
+    gsap.to('#to-top', .2, {
+      x: 100
+    })
   }
 }, 300));
+const toTopEl = document.querySelector('#to-top');
+toTopEl.addEventListener('click', () => {
+  gsap.to(window, .7, {
+    scrollTo: 0
+  })
+});
+
 
 const fadEls = document.querySelectorAll('.visual .fade-in');
 fadEls.forEach((item, idx) => {
@@ -124,3 +140,6 @@ spyEls.forEach((spyEl) => {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 })
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
