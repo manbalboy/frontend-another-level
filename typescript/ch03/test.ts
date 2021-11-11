@@ -1,6 +1,3 @@
-console.log(12);
-let test: string = "f"
-const a: number = 12;
-
+import React from 'react';
 
 
