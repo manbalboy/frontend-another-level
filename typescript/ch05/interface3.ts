@@ -9,7 +9,9 @@ function hello3(person: Person3): void {
     console.log(`안녕하세요 ${person.name} 입니다.`);
 }
 
-const p1: Person3 = {
+const p3:Person3 = {
     name: '정훈',
     test: 'test'
 }
+
+hello3(p3);
