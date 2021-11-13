@@ -44,7 +44,9 @@ test("When the - button is pressed, the counter changes to -1", () => {
 
 test("on/off button has blue color", () => {
   render(<App />);
+
   const buttonElement = screen.getByTestId("on/off-button");
+
   expect(buttonElement).toHaveStyle({ backgroundColor: "blue" });
 });
 
@@ -60,6 +62,7 @@ test("Prevent the +,- button from being pressed when th on/off button is clicked
 
   expect(plusButtonElement).toBeDisabled();
   expect(minusButtonElement).toBeDisabled();
+
   //버튼 클릭
   // fireEvent.click(minusButtonElement);
   // expect(counterElement).toHaveTextContent("0");
