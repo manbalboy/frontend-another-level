@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 function ErrorBanner({ message }) {
   let errorMessage = message || "에러 발생!!";
