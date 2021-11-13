@@ -5,7 +5,6 @@ class Students {
     [index: string]: "male" | "female" ;
 }
 
-
 const a = new Students();
 a.mark = 'male';
 a.jade = 'male';

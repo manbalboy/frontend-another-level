@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+
+</head>
+<body>
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+<!--<script type="module" src="node_modules/chart.js"></script>-->
+<script >
+  import { Chart } from 'chart.js';
+  const labels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+  ];
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+  // === include 'setup' then 'config' above ===
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+</body>
+</html>

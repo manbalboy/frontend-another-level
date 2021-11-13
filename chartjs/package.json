@@ -1,18 +1,15 @@
 {
-  "name": "ch03",
+  "name": "chartjs",
   "version": "1.0.0",
   "description": "",
-  "main": "test.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^17.0.2",
-    "typescript": "^4.4.4"
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.34"
+    "chart.js": "^3.6.0"
   }
 }
