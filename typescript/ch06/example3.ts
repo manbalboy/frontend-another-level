@@ -10,6 +10,7 @@ class Person3 {
         }
     }
 
+
     getAge(): number {
         return this._age;
     }
