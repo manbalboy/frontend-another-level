@@ -3,13 +3,24 @@ import { useState } from "react";
 
 function App() {
   const [counter, setCounter] = useState(0);
+  const fnMinusOne = () => {
+    setCounter((count) => count - 1);
+  };
+  const fnPlusOne = () => {
+    setCounter((count) => count + 1);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <h3 data-testid={"counter"}>{counter}</h3>
         <div>
-          <button data-testid={"minus-button"}>-</button>
-          <button data-testid={"plus-button"}>+</button>
+          <button data-testid={"minus-button"} onClick={fnMinusOne}>
+            -
+          </button>
+          <button data-testid={"plus-button"} onClick={fnPlusOne}>
+            +
+          </button>
         </div>
       </header>
     </div>
