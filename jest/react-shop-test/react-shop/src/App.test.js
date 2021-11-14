@@ -1,5 +1,5 @@
 import App from "./App";
-import { findByRole, render, screen } from "@testing-library/react";
+import { findByRole, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 test("From order to order completion", async () => {
@@ -58,6 +58,7 @@ test("From order to order completion", async () => {
 
   userEvent.click(confirmCheckbox);
   const confirmOrderButton = screen.getByRole("button", { name: "주문 확인" });
+
   userEvent.click(confirmOrderButton);
 
   //주문 완료 페이지
@@ -77,4 +78,8 @@ test("From order to order completion", async () => {
   });
 
   userEvent.click(firstPageButton);
+
+  await waitFor(() => {
+    screen.getByRole("spinbutton", { name: "America" });
+  });
 });
