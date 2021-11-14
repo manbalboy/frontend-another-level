@@ -1,5 +1,5 @@
 import App from "./App";
-import { render, screen } from "@testing-library/react";
+import { findByRole, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 test("From order to order completion", async () => {
@@ -59,4 +59,22 @@ test("From order to order completion", async () => {
   userEvent.click(confirmCheckbox);
   const confirmOrderButton = screen.getByRole("button", { name: "주문 확인" });
   userEvent.click(confirmOrderButton);
+
+  //주문 완료 페이지
+  const loading = screen.getByText(/loading/i);
+  expect(loading).toBeInTheDocument();
+
+  const completeHeader = await screen.findByRole("heading", {
+    name: "주문이 성공했습니다.",
+  });
+
+  expect(completeHeader).toBeInTheDocument();
+  const loadingX = screen.queryByText(loading);
+  expect(loadingX).not.toBeInTheDocument();
+
+  const firstPageButton = screen.getByRole("button", {
+    name: "첫페이지로",
+  });
+
+  userEvent.click(firstPageButton);
 });
