@@ -1,6 +1,10 @@
 import React from "react";
 
-function Products({ name, imagePath }) {
+function Products({ name, imagePath, updateItemCount }) {
+  const handleChange = (event) => {
+    const currentValue = event.target.value;
+    updateItemCount(name, currentValue);
+  };
   return (
     <div style={{ textAlign: "center" }}>
       <img
@@ -18,6 +22,7 @@ function Products({ name, imagePath }) {
           id={name}
           min="0"
           style={{ marginLeft: 7 }}
+          onChange={handleChange}
         />
       </form>
     </div>
