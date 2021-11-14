@@ -39,11 +39,15 @@ function Type({ orderType }) {
     return <ErrorBanner message="에러가 발생했습니다." />;
   }
 
+  const label = orderType === "options" ? "옵션 " : "";
+
   return (
     <>
       <h2>주문종류</h2>
       <p>하나의 가격</p>
-      <p>총 가격 : {orderDatas.totals[orderType]}</p>
+      <p>
+        {label}총 가격 : {orderDatas.totals[orderType]}
+      </p>
       <div
         style={{
           display: "flex",

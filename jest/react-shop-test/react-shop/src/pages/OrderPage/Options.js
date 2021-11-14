@@ -6,7 +6,7 @@ function Options({ name, updateItemCount }) {
   };
   return (
     <form>
-      <input type="checkbox" id={`${name}`} onChange={handleChange} />{" "}
+      <input type="checkbox" id={`${name} option`} onChange={handleChange} />{" "}
       <label htmlFor={`${name} option`}>{name}</label>
     </form>
   );
