@@ -1,21 +1,29 @@
 <template>
-  <h1>{{ message }}</h1>
-  <HelloWorld />
+  <h1 @click="increase">
+    {{ count }}
+  </h1>
+  <div>4보다 큽니다.</div>
 </template>
 
 <script>
-import HelloWorld from '~/components/HelloWorld';
-
 export default {
-  components: {
-    HelloWorld,
-  },
   data() {
     return {
-      message: 'Hello Vue!!!',
+      count: 0,
     };
+  },
+
+  methods: {
+    increase() {
+      this.count += 1;
+    },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  font-size: 20px;
+  color: royalblue;
+}
+</style>
