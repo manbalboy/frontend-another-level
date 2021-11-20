@@ -27,3 +27,10 @@ __autoprefixer__: 스타일에 자동으로 공급 업체 접두사(Vendor prefi
 - `package.json` 옵션으로 `browserslist` 추가!<br>
 - `.postcssrc.js` 생성(PostCSS 구성 옵션)!<br>
 - `.babelrc.js` 생성(Babel 구성 옵션)!<br>
+
+## vue 설치 패키지 
+```shell
+npm i vue@next # vue3 설치
+npm i -D vue-loader@next vue-style-loader @vue/compiler-sfc
+npm i -D file-loader
+```
