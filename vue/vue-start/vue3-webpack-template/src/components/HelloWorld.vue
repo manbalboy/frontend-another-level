@@ -1,12 +1,19 @@
 <template>
   <div>
     <img src="~assets/logo.png" alt="" />
-    <button type="button" disabled>fdsa</button>
+    <div></div>
+    <button type="button" disabled>ds</button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      key: 'fdsa',
+    };
+  },
+};
 </script>
 
 <style scoped></style>
