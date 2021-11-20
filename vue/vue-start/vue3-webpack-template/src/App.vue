@@ -1,23 +1,21 @@
 <template>
-    <h1> {{message}} </h1>
-    <HelloWorld />
+  <h1>{{ message }}</h1>
+  <HelloWorld />
 </template>
 
 <script>
-import HelloWorld from "~/components/HelloWorld";
+import HelloWorld from '~/components/HelloWorld';
 
 export default {
-    components: {
-        HelloWorld
-    },
-    data() {
-        return {
-            message: 'Hello Vue!!!'
-        }
-    },
-}
+  components: {
+    HelloWorld,
+  },
+  data() {
+    return {
+      message: 'Hello Vue!!!',
+    };
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

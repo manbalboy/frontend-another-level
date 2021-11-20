@@ -33,4 +33,5 @@ __autoprefixer__: 스타일에 자동으로 공급 업체 접두사(Vendor prefi
 npm i vue@next # vue3 설치
 npm i -D vue-loader@next vue-style-loader @vue/compiler-sfc
 npm i -D file-loader
+npm i -D eslint eslint-plugin-vue babel-eslint
 ```

@@ -1,15 +1,12 @@
 <template>
-    <div>
-        <img src="~assets/logo.png" alt="">
-    </div>
+  <div>
+    <img src="~assets/logo.png" alt="" />
+    <button type="button" disabled>fdsa</button>
+  </div>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
