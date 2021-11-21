@@ -1,16 +1,16 @@
 // src/components/__tests__/HelloJest.test.js
 
 import { flushPromises, mount, shallowMount } from '@vue/test-utils';
-import App from '../App.vue';
+import AppBak from '../AppBak.vue';
 
 describe('HelloJest', () => {
   // let wrapper;
   // beforeEach(() => {
-  //   wrapper = shallowMount(App);
+  //   wrapper = shallowMount(AppBak);
   // });
   test('click 하여 카운트증가', async () => {
-    const test = jest.spyOn(App.methods, 'increase');
-    const wrapper = shallowMount(App);
+    const test = jest.spyOn(AppBak.methods, 'increase');
+    const wrapper = shallowMount(AppBak);
     expect(wrapper.vm.count).toBe(0);
     await wrapper.find('h1').trigger('click');
     expect(wrapper.vm.count).toBe(1);
@@ -29,7 +29,7 @@ describe('HelloJest', () => {
   test('v-if test ', async () => {
     //목표 count 가 4 초과일 때 div > p 4보다 큽니다. 태그 보여짐
     const sTestText = '4보다 큽니다.';
-    const wrapper = mount(App);
+    const wrapper = mount(AppBak);
     const h1El = wrapper.find('h1');
     await h1El.trigger('click');
     await h1El.trigger('click');
@@ -47,7 +47,7 @@ describe('HelloJest', () => {
 
   test('v-for test and Child Component Test', async () => {
     const aTestArray = ['하나', '둘'];
-    const wrapper = mount(App, {
+    const wrapper = mount(AppBak, {
       data() {
         return {
           fruits: aTestArray,
