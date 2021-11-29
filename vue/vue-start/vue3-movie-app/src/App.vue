@@ -1,7 +1,6 @@
 <template>
   <Header></Header>
   <RouterView />
-  <button class="btn btn-primary">Button</button>
 </template>
 
 <script>
