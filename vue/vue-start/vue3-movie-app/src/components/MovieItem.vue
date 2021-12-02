@@ -34,6 +34,15 @@
     background-size: cover;
     overflow: hidden;
     position: relative;
+    &:hover:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 6px solid $primary;
+    }
     .info {
       background-color: rgba($black, 0.3);
       width: 100%;
@@ -43,6 +52,16 @@
       position: absolute;
       left: 0;
       bottom: 0;
+      backdrop-filter: blur(10px);
+      .year {
+        color: $primary;
+      }
+      .title {
+        color: $white;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
 </style>

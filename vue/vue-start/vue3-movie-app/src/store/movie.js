@@ -5,8 +5,8 @@ export default {
   namespaced: true,
   state: () => ({
     movies: [],
-    message: '',
-    loading: '',
+    message: 'Search for the movie title!',
+    loading: false,
   }),
   getters: {},
   mutations: {
@@ -21,6 +21,13 @@ export default {
   },
   actions: {
     async searchMovies(context, payload) {
+      if (context.state.loading) {
+        return;
+      }
+      context.commit('updateState', {
+        message: '',
+        loading: true,
+      });
       try {
         const res = await _fetchMovie({ ...payload, page: 1 });
 
@@ -47,6 +54,10 @@ export default {
         context.commit('updateState', {
           movies: [],
           message,
+        });
+      } finally {
+        context.commit('updateState', {
+          loading: false,
         });
       }
     },
