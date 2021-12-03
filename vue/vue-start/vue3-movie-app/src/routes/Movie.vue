@@ -5,6 +5,12 @@
 <script>
   export default {
     name: 'Movie',
+
+    created() {
+      this.$store.dispatch('movie/searchMovieWithId', {
+        id: this.$route.params.id,
+      });
+    },
   };
 </script>
 
