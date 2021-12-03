@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="inner" :class="{ 'no-result': !movies.length }">
-      <div v-if="loading" class="spinner-border text-primary"></div>
+      <Loader v-if="loading"></Loader>
       <div v-if="message" class="message">
         {{ message }}
       </div>
@@ -14,8 +14,9 @@
 
 <script>
   import MovieItem from './MovieItem';
+  import Loader from './Loader';
   export default {
-    components: { MovieItem },
+    components: { Loader, MovieItem },
     computed: {
       movies() {
         return this.$store.state.movie.movies;
