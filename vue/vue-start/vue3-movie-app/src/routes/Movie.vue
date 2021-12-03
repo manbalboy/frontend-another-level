@@ -18,7 +18,9 @@
     <div v-else class="movie-details">
       <div
         class="poster"
-        :style="{ backgroundImage: `url(${theMovie.Poster})` }"
+        :style="{
+          backgroundImage: `url(${requestDiffSizeImage(theMovie.Poster)})`,
+        }"
       >
       </div>
       <div class="specs">
@@ -35,6 +37,17 @@
         </div>
         <div class="ratings">
           <h3>Ratings</h3>
+          <div class="rating-wrap">
+            <div
+              v-for="{ Source: name, Value: score } in theMovie.Ratings"
+              :key="name"
+              :title="name"
+              class="rating"
+            >
+              <img :src="`src/assets/${name}.png`" :alt="`${name}`" />
+              <span>{{ score }}</span>
+            </div>
+          </div>
         </div>
         <div>
           <h3>Actors</h3>
@@ -75,6 +88,11 @@
       this.$store.dispatch('movie/searchMovieWithId', {
         id: this.$route.params.id,
       });
+    },
+    methods: {
+      requestDiffSizeImage(url, size = 700) {
+        return url.replace('SX300', `SX${size}`);
+      },
     },
   };
 </script>
