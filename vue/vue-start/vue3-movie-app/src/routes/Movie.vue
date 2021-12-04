@@ -73,6 +73,7 @@
 
 <script>
   import Loader from '../components/Loader';
+  import { mapActions, mapState } from 'vuex';
   export default {
     name: 'Movie',
     components: { Loader },
@@ -82,20 +83,15 @@
       };
     },
     computed: {
-      theMovie() {
-        return this.$store.state.movie.theMovie;
-      },
-
-      loading() {
-        return this.$store.state.movie.loading;
-      },
+      ...mapState('movie', ['theMovie', 'loading']),
     },
     created() {
-      this.$store.dispatch('movie/searchMovieWithId', {
+      this.searchMovieWithId({
         id: this.$route.params.id,
       });
     },
     methods: {
+      ...mapActions('movie', ['searchMovieWithId']),
       requestDiffSizeImage(url, size = 700) {
         // 잘못된 URL(Poster)인 경우.
         if (!url || url === 'N/A') {
@@ -114,8 +110,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~/scss/main';
-
   .container {
     padding-top: 40px;
   }

@@ -21,6 +21,7 @@
 
 <script>
   import Logo from './Logo';
+  import { mapState } from 'vuex';
   export default {
     name: 'Header',
     data() {
@@ -46,13 +47,7 @@
       Logo,
     },
     computed: {
-      image() {
-        return this.$store.state.about.image;
-      },
-
-      name() {
-        return this.$store.state.about.name;
-      },
+      ...mapState('about', ['image', 'name']),
     },
 
     methods: {
