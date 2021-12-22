@@ -2,21 +2,25 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode : 'production',
-  // entry: './src/index.js',
+  mode : 'development',
   entry: {
+    // index: {import :'./src/index.js', dependOn: 'shared'},
+    // another: {import :'./src/another-module.js',dependOn: 'shared'},
+    // shared: 'lodash',
+
     index: './src/index.js',
-    print: './src/print.js',
+    another: './src/another-module.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Output Management',
+      template: './index.html'
     }),
   ],
 
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist_'),
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   module: {
@@ -37,5 +41,14 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
+  },
+  // optimization: {
+  //   runtimeChunk: 'single',
+  // },
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };
