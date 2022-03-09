@@ -249,3 +249,31 @@ function solution(m, product){
 
 let arr=[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
 console.log(solution(28, arr));
+
+
+function test(p1,p2) {
+  let count=0;
+  let temp = [];
+  let root = [];
+  function DFS (r, c) {
+    if (r === p1 && c === p2) {
+      temp.push([r,c]);
+      root.push([...temp]);
+      console.log(temp.slice());
+      temp.pop();
+      count++
+    } else {
+      if(r<=p1 && c <=p2) {
+        temp.push([r,c]);
+        DFS(r+1, c);
+        temp.pop();
+
+        temp.push([r,c]);
+        DFS(r, c+1);
+        temp.pop();
+      }
+    }
+  }
+  DFS(1,1);
+  return root.length;
+}
